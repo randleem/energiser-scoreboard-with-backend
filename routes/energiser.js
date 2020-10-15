@@ -1,12 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-const { addUser, addGame, getAllWins } = require("../model/energiser.js");
+const { addUser, addGame, getAllWins, getTop5 } = require("../model/energiser.js");
 
 /* GET home page. */
 
 router.get("/", async function (req, res) {
   const scoreBoard = await getAllWins();
+  res.json({ success: true, payload: scoreBoard });
+});
+
+router.get("/getTop5", async function (req, res) {
+  const scoreBoard = await getTop5();
   res.json({ success: true, payload: scoreBoard });
 });
 

@@ -13,10 +13,16 @@ async function addGame(date, gamePlayed, user_id, wins, points ) {
     }
 
 async function getAllWins() {
-    const result = await query("SELECT CONCAT(first_name, second_name) AS name, wins  FROM users INNER JOIN games ON users.user_id = games.user_id ORDER BY wins ASC;");
+    const result = await query("SELECT SUM(wins) AS total_wins, first_name FROM users INNER JOIN games ON users.user_id = games.user_id GROUP BY users.first_name;");
     console.log(result.rows);
     return result.rows;
     };
+
+    async function getTop5() {
+        const result = await query("SELECT SUM(wins) AS total_wins, CONCAT(first_name, ' ', second_name) AS name FROM users INNER JOIN games ON users.user_id = games.user_id GROUP BY name ORDER BY total_wins DESC LIMIT 5;");
+        console.log(result.rows);
+        return result.rows;
+        };
 
 // getAllWins();
 
@@ -24,5 +30,6 @@ module.exports = {
     addUser,
     addGame,
     getAllWins,
+    getTop5,
 };
 
