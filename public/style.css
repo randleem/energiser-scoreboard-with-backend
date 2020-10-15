@@ -1,0 +1,62 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #8CD1F3;
+  text-align: center;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.game-pics {
+  margin: 15px;
+}
+
+input[type="text"], select {
+   box-sizing: border-box;
+   display: inline-block;
+   width: 70%;
+   text-align: center;
+   margin: 4px;
+}
+
+.games-played {
+  text-align:center;
+}
+/* table.center {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+} */
+
+#enter-new-user {
+  background-color: #F27F7F;
+  width: 40%;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  resize: none;
+}
+
+#enter-new-game {
+  background-color: #E7CA47;
+  widows: 40%;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+#table-scores {
+  border-spacing: 10px;
+  background-color: #4ED67A;
+  width: 60%;
+  border-radius: 5px;
+  text-align:center;
+}
+
+th {
+  max-width: 40px;
+}

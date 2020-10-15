@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../public/style.css" rel="stylesheet" />
+    <title>Energiser Scoreboard</title>
+  </head>
+  <body>
+    <div id="banner">
+        <h1>Dan & Emma's Energiser Scoreboard</h1>
+        <img id="banner-image" src="productive-team-building-activities-blog-header-1.png" alt="team-image" width="500"/>
+    </div>
+    <div id="forms">
+        <form id="enter-new-user">
+            <h2 id="new-bootcamper">Enter New Bootcamper</h2>
+            <label><input type="text" id="first-name" placeholder="First Name"></input></label>
+            <label><input type="text" id="last-name" placeholder="Last Name"></input></label>
+            <label><input type="text" id="user-name" placeholder="Username"></input></label>
+            <br>
+            <button type="submit-new-user">Submit 🤠</button>
+        </form>
+        <form id="enter-new-game">
+            <h2 id="new-game">Enter New Energiser Scores</h2>
+            <label><input type="date" id="date" value="07-22-2020" min="09-21-2020" max=02-02-2020></input></label>
+            <br>
+            <select id="games-played" name="games-played">
+                <option value="pictionary">Pictionary</option>
+                <option value="mind">Mind</option>
+                <option value="scattergories">Scattergories</option>
+            </select>
+            <label><input type="text" id="user-name" placeholder="Username"></input></label>
+            <label><input type="text" id="wins" placeholder="Games Won"></input></label>
+            <label><input type="text" id="points" placeholder="Points"></input></label>
+            <br>
+            <button type="submit-new-energiser">Submit New Energiser 🧜‍♀️<</button>
+        </form>
+    </div>
+    <div id="game-options">
+        <img class="game-pics" id="pictionary-pic" src="Pictionary3.png" alt="pictionary-pic" width="200"/>
+        <img class="game-pics" id="mind-pic" src="Mind2.jpg" alt="cats-eyes-mind" width="200"/>
+        <img class="game-pics" id="scattergories-pic" src="Scategories.jpeg" alt="scattegories-pic" width="200"/>
+    </div>
+    <div id="score-boards">
+        <section id="scores"></section>
+            <table class="center" id="table-scores">
+                <tr>
+                    <th>First Name</th>
+                    <th>Games Won</th>
+                    <th>Points</th>
+                </tr>
+                <tr id="col-names">
+                    <th>First Name</th>
+                    <th>Games Won</th>
+                    <th>Points</th>
+                </tr>
+                <tr id="row-1">
+                    <th id="r1FN"></th>
+                    <th id="r1GW"></th>
+                    <th id="r1P"></th>
+                </tr>
+                <tr id="row-2">
+                    <th id="r2FN"></th>
+                    <th id="r2GW"></th>
+                    <th id="r2P"></th>
+                </tr>
+                <tr id="row-3">
+                    <th id="r3FN"></th>
+                    <th id="r3GW"></th>
+                    <th id="r3P"></th>
+                </tr>
+                <tr id="row-4">
+                    <th id="r4FN"></th>
+                    <th id="r4GW"></th>
+                    <th id="r4P"></th>
+                </tr>
+                <tr id="row-5">
+                    <th id="r5FN"></th>
+                    <th id="r5GW"></th>
+                    <th id="r5P"></th>
+                </tr>
+            </table>
+    </div>
+
+    
+
+    <script src="../public/main.js"></script>
+  </body>
+</html>
