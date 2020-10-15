@@ -14,12 +14,13 @@ async function createUserTable() {
   console.log(result);
 }
 
-createUserTable();
+// createUserTable();
 
 const sqlGames = `
 CREATE TABLE games (
     game_id SERIAL PRIMARY KEY,
     date DATE,
+    game_played TEXT,
     user_id TEXT,
     wins INTEGER,
     points INTEGER
@@ -30,6 +31,6 @@ async function createGameTable() {
     console.log(result);
   }
 
-  createGameTable();
+createGameTable();
 
   
