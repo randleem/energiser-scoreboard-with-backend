@@ -13,10 +13,12 @@ async function addGame(date, gamePlayed, user_id, wins, points ) {
     }
 
 async function getAllWins() {
-    const result = await query("SELECT * FROM users;");
+    const result = await query("SELECT CONCAT(first_name, second_name) AS name, wins  FROM users INNER JOIN games ON users.user_id = games.user_id ORDER BY wins ASC;");
     console.log(result.rows);
     return result.rows;
-    }
+    };
+
+// getAllWins();
 
 module.exports = {
     addUser,
@@ -24,4 +26,3 @@ module.exports = {
     getAllWins,
 };
 
-//SELECT CONCAT(first_name, second_name) AS name, wins  FROM users INNER JOIN games ON user_id = user_id ORDER BY wins ASC;"

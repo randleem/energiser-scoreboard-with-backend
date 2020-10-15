@@ -4,13 +4,10 @@ var router = express.Router();
 const { addUser, addGame, getAllWins } = require("../model/energiser.js");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
 
 router.get("/", async function (req, res) {
   const scoreBoard = await getAllWins();
-  res.json({ success: true});
+  res.json({ success: true, payload: scoreBoard });
 });
 
 router.post("/", async function (req, res) {

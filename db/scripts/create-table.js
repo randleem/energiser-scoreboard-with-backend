@@ -21,7 +21,7 @@ CREATE TABLE games (
     game_id SERIAL PRIMARY KEY,
     date DATE,
     game_played TEXT,
-    user_id TEXT,
+    user_id INTEGER,
     wins INTEGER,
     points INTEGER
 );`;
