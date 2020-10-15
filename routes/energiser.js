@@ -1,11 +1,16 @@
 var express = require('express');
 var router = express.Router();
 
-const { addUser, addGame } = require("../model/energiser.js");
+const { addUser, addGame, getAllWins } = require("../model/energiser.js");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
+});
+
+router.get("/", async function (req, res) {
+  const scoreBoard = await getAllWins();
+  res.json({ success: true});
 });
 
 router.post("/", async function (req, res) {
@@ -21,5 +26,6 @@ router.post("/game", async function (req, res) {
   console.log(id);
   res.json({ success: true, message: `Congratulations ${userId} you're game has been added to the Scoreboard iD: ${id}` });
 });
+
 
 module.exports = router;
