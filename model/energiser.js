@@ -24,6 +24,12 @@ async function getTop5() {
     return result.rows;
     };
 
+async function getPictionaryTop5() {
+    const result = await query("SELECT first_name, SUM(wins) AS total_wins, SUM(points) AS total_points FROM users INNER JOIN games ON users.user_id = games.user_id WHERE game_played = 'Pictionary' GROUP BY first_name ORDER BY total_wins DESC LIMIT 5;");
+    console.log(result.rows);
+    return result.rows;
+    };
+
 // getAllWins();
 
 module.exports = {
@@ -31,5 +37,6 @@ module.exports = {
     addGame,
     getAllWins,
     getTop5,
+    getPictionaryTop5,
 };
 

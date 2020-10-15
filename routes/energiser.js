@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const { addUser, addGame, getAllWins, getTop5 } = require("../model/energiser.js");
+const { addUser, addGame, getAllWins, getTop5, getPictionaryTop5 } = require("../model/energiser.js");
 
 /* GET home page. */
 
@@ -12,6 +12,11 @@ router.get("/", async function (req, res) {
 
 router.get("/getTop5", async function (req, res) {
   const scoreBoard = await getTop5();
+  res.json({ success: true, payload: scoreBoard });
+});
+
+router.get("/getPicionaryTop5", async function (req, res) {
+  const scoreBoard = await getPictionaryTop5();
   res.json({ success: true, payload: scoreBoard });
 });
 
