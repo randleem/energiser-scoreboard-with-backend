@@ -36,8 +36,8 @@ router.get("/getScattergoriesTop5", async function (req, res) {
 });
 
 router.post("/", async function (req, res) {
-  const {firstName, lastName, userName} = req.body;
-  const id = await addUser(firstName, lastName, userName);
+  const {first_name, second_name, user_name} = req.body;
+  const id = await addUser(first_name, second_name, user_name);
   console.log(id);
   res.json({ success: true, userId: id });
 });
