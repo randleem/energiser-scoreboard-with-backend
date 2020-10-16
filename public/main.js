@@ -1,10 +1,12 @@
 const leaderBoard = document.querySelector("#table-scores");
+const scoreBoardReset = document.querySelector("#get-top-scores");
 
 //Game Pic Selection
 const pictionaryPic = document.querySelector("#pictionary-pic");
 const mindPic = document.querySelector("#mind-pic");
 const scattegoriesPic = document.querySelector("#scattergories-pic");
 
+scoreBoardReset.addEventListener("click", resetScoreBoard);
 //Game Event Listeners
 // pictionaryPic.addEventListener("click", getPictionaryTop5);
 
@@ -65,3 +67,10 @@ function addLeaderRows(player){
     row.appendChild(rowTP);
     leaderBoard.appendChild(row);
 };
+
+function resetScoreBoard(){
+    leaderBoard.innerHTML = "";
+    pictionaryPic.src="Pictionary3.png";
+    scattegoriesPic.src="Scategories.jpeg";
+    mindPic.src="Mind2.jpg";
+}
