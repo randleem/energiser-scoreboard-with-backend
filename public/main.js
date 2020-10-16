@@ -1,5 +1,34 @@
 const leaderBoard = document.querySelector("#table-scores");
 const scoreBoardReset = document.querySelector("#get-top-scores");
+const gameButton = document.querySelector("#submit-new-energiser");
+
+gameButton.addEventListener("click", gameEntry);
+// Take in put from the Website Form
+    // inputs.value
+
+    //Add event listener - submit button
+        //Submits into in the correct format to send to our database via a get request
+// Post to our database
+
+let test = {
+    "date": "10/17/2020",
+    "gamePlayed": "Pictionary",
+    "userId": 6, 
+    "wins": 8, 
+    "points": 21
+}
+let test2 = [];
+
+function gameEntry(){
+    const date = document.querySelector("#date").value;
+    const gamePlayed = document.querySelector("#games-played").value;
+    const userID = document.querySelector("#user-id").value;
+    const gamesWon = document.querySelector("#wins").value;
+    const gamesPoints = document.querySelector("#points").value;
+    test2.push(gamePlayed);
+    console.log(test2);
+    document.querySelector("#enter-new-game").reset();
+}
 
 //Game Pic Selection
 const pictionaryPic = document.querySelector("#pictionary-pic");
@@ -37,16 +66,6 @@ async function getMindTop5(){
     console.log(payload);
     mindRun(payload);
 }
-
-//pictionaryPic.addEventListener("click", test);
-
-// const payload = [
-//     { first_name: 'Mell', total_wins: '13', total_points: '23' },
-//     { first_name: 'Emma', total_wins: '9', total_points: '10' },
-//     { first_name: 'Lizzie', total_wins: '4', total_points: '6' },
-//     { first_name: 'Ben', total_wins: '1', total_points: '1' },
-//     { first_name: 'Dan', total_wins: '1', total_points: '1' }
-//   ];
 
 function pictionaryRun(payload){
     mindPic.src="";
