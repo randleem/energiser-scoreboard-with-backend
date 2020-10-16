@@ -54,8 +54,6 @@ function gameEntry(){
         wins,
         points
     };
-    
-    
 }
 
 function userEntry(){
@@ -68,8 +66,6 @@ function userEntry(){
         second_name,
         user_name
     };
-    
-    
 }
 
 //Game Pic Selection
