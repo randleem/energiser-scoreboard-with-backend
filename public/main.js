@@ -4,36 +4,67 @@ const scoreBoardReset = document.querySelector("#get-top-scores");
 //Game Pic Selection
 const pictionaryPic = document.querySelector("#pictionary-pic");
 const mindPic = document.querySelector("#mind-pic");
-const scattegoriesPic = document.querySelector("#scattergories-pic");
+const scattergoriesPic = document.querySelector("#scattergories-pic");
 
 scoreBoardReset.addEventListener("click", resetScoreBoard);
 //Game Event Listeners
-// pictionaryPic.addEventListener("click", getPictionaryTop5);
+pictionaryPic.addEventListener("click", getPictionaryTop5);
 
-// mindPic.addEventListener("click", getMindTop5);
-// scattegoriesPic.addEventListener("click", getScattegoriesTop5);
+ mindPic.addEventListener("click", getMindTop5);
+ scattergoriesPic.addEventListener("click", getScattergoriesTop5);
 
-// Create Functions that get top5 for all game categories
-// async function getPictionaryTop5(){
-//     console.log("Hello");
-//     const response = await fetch("http://localhost:3000/energiser/getPicionaryTop5");
-//     const {payload} = await response.json();
-//     console.log(payload);
-// }
+//Create Functions that get top5 for all game categories
+async function getPictionaryTop5(){
+    console.log("Hello");
+    const response = await fetch("http://localhost:3000/energiser/getPictionaryTop5");
+    const {payload} = await response.json();
+    console.log(payload);
+    pictionaryRun(payload);
+}
 
-pictionaryPic.addEventListener("click", test);
+async function getScattergoriesTop5(){
+    console.log("Hello");
+    const response = await fetch("http://localhost:3000/energiser/getScattergoriesTop5");
+    const {payload} = await response.json();
+    console.log(payload);
+    scattergoriesRun(payload);
+}
 
-const payload = [
-    { first_name: 'Mell', total_wins: '13', total_points: '23' },
-    { first_name: 'Emma', total_wins: '9', total_points: '10' },
-    { first_name: 'Lizzie', total_wins: '4', total_points: '6' },
-    { first_name: 'Ben', total_wins: '1', total_points: '1' },
-    { first_name: 'Dan', total_wins: '1', total_points: '1' }
-  ];
+async function getMindTop5(){
+    console.log("Hello");
+    const response = await fetch("http://localhost:3000/energiser/getMindTop5");
+    const {payload} = await response.json();
+    console.log(payload);
+    mindRun(payload);
+}
 
-function test(){
+//pictionaryPic.addEventListener("click", test);
+
+// const payload = [
+//     { first_name: 'Mell', total_wins: '13', total_points: '23' },
+//     { first_name: 'Emma', total_wins: '9', total_points: '10' },
+//     { first_name: 'Lizzie', total_wins: '4', total_points: '6' },
+//     { first_name: 'Ben', total_wins: '1', total_points: '1' },
+//     { first_name: 'Dan', total_wins: '1', total_points: '1' }
+//   ];
+
+function pictionaryRun(payload){
     mindPic.src="";
-    scattegoriesPic.src="";
+    scattergoriesPic.src="";
+    addLeaderCols();
+    payload.forEach(addLeaderRows);
+}
+
+function scattergoriesRun(payload){
+    mindPic.src="";
+    pictionaryPic.src="";
+    addLeaderCols();
+    payload.forEach(addLeaderRows);
+}
+
+function mindRun(payload){
+    scattergoriesPic.src="";
+    pictionaryPic.src="";
     addLeaderCols();
     payload.forEach(addLeaderRows);
 }
@@ -71,6 +102,6 @@ function addLeaderRows(player){
 function resetScoreBoard(){
     leaderBoard.innerHTML = "";
     pictionaryPic.src="Pictionary3.png";
-    scattegoriesPic.src="Scategories.jpeg";
+    scattergoriesPic.src="Scategories.jpeg";
     mindPic.src="Mind2.jpg";
 }

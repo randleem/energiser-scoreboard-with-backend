@@ -30,6 +30,19 @@ async function getPictionaryTop5() {
     return result.rows;
     };
 
+    async function getMindTop5() {
+        const result = await query("SELECT first_name, SUM(wins) AS total_wins, SUM(points) AS total_points FROM users INNER JOIN games ON users.user_id = games.user_id WHERE game_played = 'Mind' GROUP BY first_name ORDER BY total_wins DESC LIMIT 5;");
+        console.log(result.rows);
+        return result.rows;
+        };
+
+        async function getScattergoriesTop5() {
+            const result = await query("SELECT first_name, SUM(wins) AS total_wins, SUM(points) AS total_points FROM users INNER JOIN games ON users.user_id = games.user_id WHERE game_played = 'Scattergories' GROUP BY first_name ORDER BY total_wins DESC LIMIT 5;");
+            console.log(result.rows);
+            return result.rows;
+            };
+
+
 // getAllWins();
 
 module.exports = {
@@ -38,5 +51,7 @@ module.exports = {
     getAllWins,
     getTop5,
     getPictionaryTop5,
+    getMindTop5,
+    getScattergoriesTop5,
 };
 
