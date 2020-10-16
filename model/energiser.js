@@ -1,7 +1,7 @@
 const { query } = require("../db/index");
 
-async function addUser(firstName, lastName, userName) {
-    const result = await query("INSERT INTO users (first_name, second_name, user_name) VALUES ($1, $2, $3) RETURNING user_id;", [firstName, lastName, userName]);
+async function addUser(first_name, second_name, user_name) {
+    const result = await query("INSERT INTO users (first_name, second_name, user_name) VALUES ($1, $2, $3) RETURNING user_id;", [first_name, second_name, user_name]);
     console.log(result.rows[0].user_id)
     return result.rows[0].user_id;
     };

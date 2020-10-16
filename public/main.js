@@ -20,25 +20,16 @@ async function updateScores() {
     console.log(data);
   }
 
-  async function submitUser() {
-    const response = await fetch("http://localhost:3000/energiser", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(userEntry())
+async function submitUser() {
+const response = await fetch("http://localhost:3000/energiser", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(userEntry())
     });
     const data = await response.json(); // we need to send a reasponse of some kind that acknowledges weve recipeved the input
     console.log(data.userId);
     alert(`This is your User ID: ${data.userId}. Please use to enter energiser scores.`);
-  }
-
-let test = {
-    "date": "10/17/2020",
-    "gamePlayed": "Pictionary",
-    "userId": 6, 
-    "wins": 8, 
-    "points": 21
-}
-let test2 = [];
+    }
 
 function gameEntry(){
     const date = document.querySelector("#date").value;
