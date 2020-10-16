@@ -34,7 +34,7 @@ router.post("/", async function (req, res) {
   const {firstName, lastName, userName} = req.body;
   const id = await addUser(firstName, lastName, userName);
   console.log(id);
-  res.json({ success: true, message: `Congratulations ${firstName} you've been added as a user with iD: ${id}, please keep safe for future identification` });
+  res.json({ success: true, userId: id });
 });
 
 router.post("/game", async function (req, res) {

@@ -1,14 +1,35 @@
 const leaderBoard = document.querySelector("#table-scores");
 const scoreBoardReset = document.querySelector("#get-top-scores");
 const gameButton = document.querySelector("#submit-new-energiser");
-
-gameButton.addEventListener("click", gameEntry);
+const userButton = document.querySelector("#submit-new-user");
+userButton.addEventListener("click", submitUser);
+gameButton.addEventListener("click", updateScores);
 // Take in put from the Website Form
     // inputs.value
 
     //Add event listener - submit button
         //Submits into in the correct format to send to our database via a get request
 // Post to our database
+async function updateScores() {
+    const response = await fetch("http://localhost:3000/energiser/game", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(gameEntry())
+    });
+    const data = await response.json(); // we need to send a reasponse of some kind that acknowledges weve recipeved the input
+    console.log(data);
+  }
+
+  async function submitUser() {
+    const response = await fetch("http://localhost:3000/energiser", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(userEntry())
+    });
+    const data = await response.json(); // we need to send a reasponse of some kind that acknowledges weve recipeved the input
+    console.log(data.userId);
+    alert(`This is your User ID: ${data.userId}. Please use to enter energiser scores.`);
+  }
 
 let test = {
     "date": "10/17/2020",
@@ -22,12 +43,33 @@ let test2 = [];
 function gameEntry(){
     const date = document.querySelector("#date").value;
     const gamePlayed = document.querySelector("#games-played").value;
-    const userID = document.querySelector("#user-id").value;
-    const gamesWon = document.querySelector("#wins").value;
-    const gamesPoints = document.querySelector("#points").value;
-    test2.push(gamePlayed);
-    console.log(test2);
+    const userId = document.querySelector("#user-id").value;
+    const wins = document.querySelector("#wins").value;
+    const points = document.querySelector("#points").value;
     document.querySelector("#enter-new-game").reset();
+    return {
+        date,
+        gamePlayed,
+        userId,
+        wins,
+        points
+    };
+    
+    
+}
+
+function userEntry(){
+    const first_name = document.querySelector("#first-name").value;
+    const second_name = document.querySelector("#last-name").value;
+    const user_name = document.querySelector("#user-name").value;
+    document.querySelector("#enter-new-user").reset();
+    return {
+        first_name,
+        second_name,
+        user_name
+    };
+    
+    
 }
 
 //Game Pic Selection
