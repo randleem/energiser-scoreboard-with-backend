@@ -7,7 +7,7 @@ This was our week 4 Friday hackathon at the [School of Code](https://www.schoolo
 
 Dan Watson @danwatson2309 (my paired-programming partner for the week) and I created a front-end to display our energiser game scores and a back-end with persistent storage 
 
-This was a really fun hackethon and we were superproud of it
+This was a really fun hackethon and we were super proud of it
 
  👾 **Energiser Game Scoreboard** 🕹️
 
