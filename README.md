@@ -1,15 +1,18 @@
 # Recipe Api Intro to PostgreSQL
 
-*16th October 2020*
-*Week 4 at the [School of Code](https://www.schoolofcode.co.uk)*
+_16th October 2020_
+_Week 4 at the [School of Code](https://www.schoolofcode.co.uk)_
 
 This was our week 4 Friday hackathon at the [School of Code](https://www.schoolofcode.co.uk) which was our first full-stack application using node.js, express, postgreSQL and JavaScript
 
-Dan Watson @danwatson2309 (my paired-programming partner for the week) and I created a front-end to display our energiser game scores and a back-end with persistent storage 
+Dan Watson @danwatson2309 (my paired-programming partner for the week) and I created a front-end to display our energiser game scores and a back-end with persistent storage
 
 This was a really fun hackethon and we were super proud of it
 
- 👾 **Energiser Game Scoreboard** 🕹️
+👾 **Energiser Game Scoreboard** 🕹️
+
+![image of scoreboard](./pic1.png)
+![image of categories](./pic2.png)
 
 ## Built with
 
@@ -41,6 +44,7 @@ npm i
 ```
 touch .env
 ```
+
 5. Add your Heroku Database credentials to the .env fole
 
 ```
