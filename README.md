@@ -39,7 +39,7 @@ https://github.com/randleem/energiser-scoreboard-with-backend.git
 npm i
 ```
 
-4. Crete a .env file to enter your Heroku Database credentials
+4. Create a .env file to enter your Heroku Database credentials
 
 ```
 touch .env
