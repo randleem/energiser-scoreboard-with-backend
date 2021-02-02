@@ -45,7 +45,7 @@ npm i
 touch .env
 ```
 
-5. Add your Heroku Database credentials to the .env fole
+5. Add your Heroku Database credentials to the .env file
 
 ```
 PGHOST= "your host details"
