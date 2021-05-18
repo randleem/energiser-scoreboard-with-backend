@@ -1,4 +1,4 @@
-# Recipe Api Intro to PostgreSQL
+# Energiser App with Backend - PostgreSQL
 
 _16th October 2020_
 _Week 4 at the [School of Code](https://www.schoolofcode.co.uk)_
